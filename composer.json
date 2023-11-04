@@ -1,4 +1,22 @@
 {
+    "name": "schnoog/php_atproto", 
+    "version": "0.0.0.1", 
+    "description": "Lightweight PHP ATProto Implementation", 
+    "type": "library", 
+    "keywords": ["REST", "api", "client", "aproto", "bluesky", "bsky"], 
+    "homepage": "https://github.com/schnoog/php_atproto", 
+    "license": "MIT", 
+    "authors": [
+        {
+            "name": "Schnoog", 
+            "role": "Developer", 
+            "email": "schnoog@schnoog.eu"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/schnoog/php_atproto/issues"
+    },
+
     "require": {
         "tcdent/php-restclient": "0.1.8.4"
     }

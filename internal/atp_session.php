@@ -38,6 +38,7 @@ function atp_session_get(){
 function atp_session_create($forcenew = false)
 {
     global $config;
+    $debugthis = false;
     $nsid = 'com.atproto.server.createSession';
     $client = new RestClient(array(
         'base_url' => $config['atproto']['server'] . $config['atproto']['xrpc-prefix'] . $nsid,
@@ -52,11 +53,11 @@ function atp_session_create($forcenew = false)
         $config['session'] = json_decode(json_encode($result->decode_response()), true);
         $sessionstring = json_encode($config['session']);
         file_put_contents($config['sessionstorage'], $sessionstring);
-        DebugOut($config['session']);
+        DebugOut($config['session'],"Session",$debugthis);
         atp_sessioncheck_set();
         return true;
     }else{
-        DebugOut($tmpX['response_status_lines'][0],"ERROR");
+        DebugOut($tmpX['response_status_lines'][0],"ERROR",$debugthis);
         return false;
     }   
     
