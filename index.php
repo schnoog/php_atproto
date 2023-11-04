@@ -7,12 +7,18 @@ require_once(__DIR__ . "/includer.php");
 
 //DebugOut($config);
 
-$text = "Let's try mention someone @schnoog.eu and 2 clickable links... will it work?... http://bsky.app hm..... https://schnoog.eu ..";
+$text = ".. Image upload? ..";
 //$tmp =  atp_helper_get_link_facets_from_text($text);
 
 //$tmp = atp_helper_get_mention_facets_from_text($text);
 
-$tmp = atp_create_post($text,["de"],true,true);
+$myimages[] = __DIR__ . "/pic01.jpg";
+$myimages[] = __DIR__ . "/pic02.jpg";
+$myimages[] = __DIR__ . "/pic03.jpg";
+$myimages[] = __DIR__ . "/pic04.jpg";
+
+//$tmp = atp_create_file_blob($myimage);
+$tmp = atp_create_post($text,["de"],true,true,$myimages,['2nd','3rd','4th','5th']);
 DebugOut($tmp);
 
 

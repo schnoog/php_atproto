@@ -12,6 +12,57 @@ $config['REGEXP_URL'] = 'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~\#=]{1,256}\.' .
 
 
 
+/**
+ * atp_get_did_from_handle - returns the did of a given handle (f.e. schnoog.eu)
+ * @param mixed $handle 
+ * @return mixed 
+ * @throws RestClientException 
+ */
+function atp_get_did_from_handle($handle){
+    global $config;
+    $data = [
+                'handle' => $handle,
+    ];
+    $diddata = atp_get_data('com.atproto.identity.resolveHandle',$data);
+    if(!$diddata) return false;
+    return $diddata['did'];
+}
+
+
+/**
+ * atp_helper_get_mention_facets_from_text - extracts positions the mentions of users in the text given which will be replaced by links
+ * @param mixed $text 
+ * @return array 
+ * @throws RestClientException 
+ */
+function atp_helper_get_mention_facets_from_text($text){
+    global $config;
+    $facets = [];
+
+    $pattern = '#(?<=^|\W)(@' . $config['REGEXP_HANDLE'] . ')#';
+    preg_match_all($pattern, $text, $matches, PREG_OFFSET_CAPTURE);
+
+    foreach ($matches[0] as $match) {
+        $handle = $match[0];
+        $start = $match[1];
+
+        $did = atp_get_did_from_handle(substr($handle, 1));
+        $facet =[ 
+            'did' => $did,
+            'start' =>  $start,
+            'end' => $start + strlen($handle)
+        ];
+        $facets[] = $facet; 
+
+    }
+    return $facets;
+}
+
+/**
+ * atp_helper_get_link_facets_from_text  - extracts the positions of uri which will be replaced by links
+ * @param mixed $text 
+ * @return array 
+ */
 function atp_helper_get_link_facets_from_text($text)
     {
         global $config;
