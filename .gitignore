@@ -3,3 +3,5 @@ vendor/*
 composer.lock
 #*.jpg
 #*.png
+atproto_info/*
+atproto_info/

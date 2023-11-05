@@ -151,6 +151,24 @@ DebugOut($timeline);
 
 ```
 
+### Search posts
+
+This function is somehow limited. I'm currently unable to receive any valid result from `app.bsky.feed.searchPosts`.
+So instead I'm reading from `https://search.bsky.social/search/posts`
+
+Not nice, but it works however
+
+```
+<?php 
+require_once(__DIR__ . "/includer.php");
+
+//Search for posts containing "Arduino" and print the result
+$answer = atp_post_search("Arduino");
+DebugOut($answer);
+
+
+```
+
 
 
 
