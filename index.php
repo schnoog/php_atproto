@@ -45,9 +45,22 @@ $website_image = __DIR__ . "/website_image.png";
 
 
 //Get the DID identified for a handle 
-//$tmp = atp_get_did_from_handle("develobot.bsky.social");
-//DebugOut($tmp);
+//$tmp = atp_get_did_from_handle("schnoog.eu");
+
+//$data = [
+//    'actor' => 'develobot.bsky.social'
+//];
+
+
+//$tmp = atp_get_data($config["nsid"]['getfollowers'],$data);
+
+$userhandle = 'develobot.bsky.social';
+$tmp = atp_graph_getfollowers($userhandle);
+
+
+DebugOut($tmp);
 
 //Search for posts containing "Arduino" and print the result
 //$answer = atp_post_search("Arduino");
 //DebugOut($answer);
+
