@@ -56,7 +56,7 @@ I have (currently) only a few:
 * If I call a function to f.e. post on Bluesky, I should only be required to call the functions with its' parameteres, the rest should happen behind the scenes
 
 ## How  does it work
-I'm not the biggest fan of OOP. Not everything in my digital world has to be a class. So I'll keep the interface purely function
+I'm not the biggest fan of OOP. Not everything in my digital world has to be a class. So I'll keep the interface purely function (evenso that especially creating a post would be easier to encapsulate in a class)
 
 ## What's alread there
 OK, let's check what's available
