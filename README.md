@@ -12,6 +12,43 @@ Currently (I would call it pre-alpha) I include only one 3rd party library, name
 
 Maybe it will become more in the future. 
 
+## Installation
+### Manual installation
+This means you have a copy of the whole repository either by
+ * Cloning from Github
+ * * git clone git@github.com:schnoog/php_atproto.git ->your install directory<-
+ *  * git clone https://github.com/schnoog/php_atproto.git ->your install directory<-
+
+ or
+ 
+ *  Downloading the [zip archive from Github ](https://github.com/schnoog/php_atproto/archive/refs/heads/main.zip) and extracting it to ->your install directory<-
+ * 
+ 
+After you have the files in your desired directory, copy the file 
+`config.dist.php` into your install directory and rename it to `config.php`
+
+Change the content of the `config.php` and enter your credentials
+
+
+### Composer installation
+You can install the library with composer by executing
+
+`composer require schnoog/php_atproto`
+
+This will install the library in the usual vendor directory.
+Now copy the file 
+`/vendor/schnoog/php_atproto/src/config.dist.php`
+to your install directory and rename it to `config.php`
+
+
+
+or use the following command from within your install directory to copy the file automatically (if there's alreay a file name `config.php` in the install directory it will not be overwritten.
+
+`php -r 'if(!file_exists(__DIR__ . "/config.php"))   copy (__DIR__ . "/vendor/schnoog/php_atproto/src/config.dist.php", __DIR__ . "/config.php");'`
+
+Change the content of the `config.php` and enter your credentials
+
+
 ## My requirements
 I have (currently) only a few:
 * Login (create auth token)

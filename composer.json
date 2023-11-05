@@ -1,6 +1,6 @@
 {
     "name": "schnoog/php_atproto", 
-    "version": "0.0.0.3", 
+    "version": "0.0.0.4", 
     "description": "Lightweight PHP ATProto Implementation", 
     "type": "library", 
     "keywords": ["REST", "api", "client", "aproto", "bluesky", "bsky"], 
@@ -23,12 +23,6 @@
     "autoload": {
         "files": [
             "src/includer.php"
-        ]
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "php -r \"if(!file_exists(getcwd() . '/config.php')) copy ('src/config.dist.php',getcwd() . '/config.php');\"",
-            "php -r \"if(!file_exists(getcwd() . '/example.php')) copy ('src/example.php',getcwd() . '/example.php');\""
         ]
     }
 
