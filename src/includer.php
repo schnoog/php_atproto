@@ -1,20 +1,28 @@
 <?php
 
+global $config;
+
 $config['maindir'] = __DIR__ ."/";
 $config['internaldir'] =  $config['maindir'] . "internal/";
+$config['projectpath'] = getcwd() . "/";
 
 /**
  * First step: Read the config and create the session array
  */
-require_once($config['maindir'] . "config.php");
+require_once($config['projectpath'] . "config.php");
 $config['session'] = [];
 $config['error'] = [];
 
 /**
- * Let's start with including the composer stuff
+ * Let's start with including the composer stuff - but only if not installed by composer
  */
-
-require_once($config['maindir'] . "../vendor/autoload.php");
+$incs = get_included_files();
+$isin = false;
+for($x=0;$x < count($incs); $x++){
+		$inc = $incs[$x];
+		if( strpos($inc,"autoload.php") > 0) $isin = true;
+}
+if(!$isin) require_once($config['maindir'] . "../vendor/autoload.php");
 
 /**
  * And now include all the php files in the internal directory
@@ -34,5 +42,8 @@ $config['tmp_blob_path'] = sys_get_temp_dir();
 
 
 $config['nsid'] = $NSID[$config['atproto']['service']];
+
+
+
 
 

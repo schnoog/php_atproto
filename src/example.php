@@ -1,5 +1,13 @@
 <?php 
-require_once(__DIR__ . "/src/includer.php");
+
+/**
+ * THIS EXAMPLE IS FOR COMPOSER INSTALLATION ONLY
+ * 
+ * if you installed the library manually, you need to
+ * require_once(__DIR__ . "/src/includer.php");
+ */
+
+require_once(__DIR__ . "/vendor/autoload.php");
 
 /*
 Let's define some variables
@@ -16,7 +24,8 @@ $website_description = "My user defined description";
 $website_image = __DIR__ . "/website_image.png"; 
 
 
-//DebugOut($config['nsid']);
+//DebugOut is my quick and dirty debug output 
+//DebugOut($data,$label ,$show);  
 
 //The most simple text post - parsing of mentions and links is ENABLED by default
 //$answer = atp_create_post($text);
