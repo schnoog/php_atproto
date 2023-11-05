@@ -1,4 +1,5 @@
 config.php
 vendor/*
 composer.lock
-*.jpg
+#*.jpg
+#*.png

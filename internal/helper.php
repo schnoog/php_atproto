@@ -9,7 +9,61 @@ $config['REGEXP_URL'] = 'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~\#=]{1,256}\.' .
 '[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~\#?&//=]*[-a-zA-Z0-9@%_\+~\#//=])?';
 
 
+/**
+ * atp_get_timeline - returns the number of entries defined from the own timeline
+ * @param int $limit 
+ * @return bool 
+ * @throws RestClientException 
+ */
+function atp_get_timeline($limit = 50){
+    $retval = atp_get_data("app.bsky.feed.getTimeline",["limit" => $limit]);
+    return $retval;
+}
 
+
+/**
+ * atp_create_file_blob - created a blob from a file
+ * @param mixed $filename 
+ * @return mixed 
+ */
+function atp_create_file_blob($filename){
+    global $config;
+    $tmpfile = false;
+    if(strpos($filename,"http") === 0){
+        $filedata = file_get_contents($filename);
+        $tmpname = $config['tmp_blob_path'] . "/" . time() . "_" . basename($filename);
+        file_put_contents($tmpname,$filedata);
+        $filename = $tmpname;
+        $tmpfile = true;
+
+        DebugOut(['REMOTE IMAGE'],"REMOTE IMAGE");
+    }else{
+        DebugOut(['LOCAL IMAGE'],"LOCAL IMAGE");
+
+    }
+
+    //if (! file_exists($filename)) return false;
+    $blob = array();
+    $filedata = file_get_contents($filename);
+    $filemime = mime_content_type($filename);
+    $nsid = 'com.atproto.repo.uploadBlob';
+    $data =  $filedata;
+    DebugOut($filemime,"MIME");
+    $retval = atp_post_data($nsid,$data,$filemime,false);
+    DebugOut($retval, "BlobUpload");
+    $blob = [
+        '$type'=> "blob",
+        'ref' => [ '$link' => $retval['blob']['ref']['$link'] ],
+        'mimeType'  => $retval['blob']['mimeType'],
+        'size'      => $retval['blob']['size'],
+    ];
+
+    if($tmpfile){
+        if(file_exists($filename)) unlink($filename);
+    }
+
+    return $blob;
+}
 
 
 /**
