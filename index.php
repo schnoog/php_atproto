@@ -1,5 +1,5 @@
 <?php 
-require_once(__DIR__ . "/includer.php");
+require_once(__DIR__ . "/src/includer.php");
 
 /*
 Let's define some variables
@@ -22,7 +22,8 @@ $website_image = __DIR__ . "/website_image.png";
 //$answer = atp_create_post($text);
 
 //Now a post, just like above, but this time with the 2 defined images attached, and the $lang keys
-//$answer = atp_create_post($text,$lang,true,true,$images,$images_alts);
+$text = "now test the new library structure";
+$answer = atp_create_post($text,$lang,true,true,$images,$images_alts);
 
 //And now a post which includes a webcard, for which we only provide the URL
 //$answer = atp_create_post($text,$lang,true,true,[],[],$website_uri);
@@ -40,5 +41,5 @@ $website_image = __DIR__ . "/website_image.png";
 //DebugOut($tmp);
 
 //Search for posts containing "Arduino" and print the result
-$answer = atp_post_search("Arduino");
-DebugOut($answer);
+//$answer = atp_post_search("Arduino");
+//DebugOut($answer);

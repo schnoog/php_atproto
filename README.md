@@ -34,7 +34,7 @@ at the beginning of the interface (post, get timeline...) functions.
 
 ```
 <?php 
-require_once(__DIR__ . "/includer.php");
+require_once(__DIR__ . "/src/includer.php");
 
 
 if (!atp_session_get()){
@@ -104,7 +104,7 @@ OK, let's look how some calls you be done
 
 ```
 <?php 
-require_once(__DIR__ . "/includer.php");
+require_once(__DIR__ . "/src/includer.php");
 
 /*
 Let's define some variables
@@ -142,7 +142,7 @@ Yes, also reading the own timeline (or feed or however it's called) is also quit
 
 ```
 <?php 
-require_once(__DIR__ . "/includer.php");
+require_once(__DIR__ . "/src/includer.php");
 
 //Get 27 entries of the own timeline and print it by DebugOut
 $timeline = atp_get_timeline(27);
@@ -160,7 +160,7 @@ Not nice, but it works however
 
 ```
 <?php 
-require_once(__DIR__ . "/includer.php");
+require_once(__DIR__ . "/src/includer.php");
 
 //Search for posts containing "Arduino" and print the result
 $answer = atp_post_search("Arduino");

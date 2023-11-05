@@ -19,5 +19,10 @@
 
     "require": {
         "tcdent/php-restclient": "0.1.8.4"
+    },
+    "autoload": {
+        "classmap": [
+            "src/includer.php"
+        ]
     }
 }

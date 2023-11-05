@@ -14,7 +14,7 @@ $config['error'] = [];
  * Let's start with including the composer stuff
  */
 
-require_once($config['maindir'] . "vendor/autoload.php");
+require_once($config['maindir'] . "../vendor/autoload.php");
 
 /**
  * And now include all the php files in the internal directory
