@@ -16,7 +16,8 @@ $config['REGEXP_URL'] = 'https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~\#=]{1,256}\.' .
  * @throws RestClientException 
  */
 function atp_get_timeline($limit = 50){
-    $retval = atp_get_data("app.bsky.feed.getTimeline",["limit" => $limit]);
+    global $config;
+    $retval = atp_get_data($config['nsid']['get_timeline'],["limit" => $limit]);
     return $retval;
 }
 

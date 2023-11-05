@@ -30,7 +30,9 @@ foreach(glob($config['internaldir'] . "*.php") as $file){
  */
 $config['sessionstorage'] =  sys_get_temp_dir() . "/atproto.session";
 $config['sessionstorage_validstamp'] = $config['sessionstorage'] . "_check";
+$config['tmp_blob_path'] = sys_get_temp_dir();
 
 
+$config['nsid'] = $NSID[$config['atproto']['service']];
 
 

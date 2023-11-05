@@ -51,7 +51,7 @@ if($add_link_facets){
                     "byteEnd" => $link_facets[$x]['end']
                 ],
                 'features'=>[[
-                    '$type'=> "app.bsky.richtext.facet#link",
+                    '$type'=> $config['nsid']['rt_fc_link'],
                     'uri' => $link_facets[$x]['url']
                 ]]
             ];
@@ -70,7 +70,7 @@ if($add_mentions_facets){
                     "byteEnd" => $mention_facets[$x]['end']
                 ],
                 'features'=>[[
-                    '$type'=> "app.bsky.richtext.facet#mention",
+                    '$type'=> $config['nsid']['rt_fc_mention'],
                     'did' => $mention_facets[$x]['did']
                 ]]
             ];
@@ -111,7 +111,7 @@ if(!is_null($website_uri)){
         }
     }
     $wcembed =[
-        '$type' => "app.bsky.embed.external",
+        '$type' => $config['nsid']['embed_external'],
         'external' =>  $extdata
 
      ]; 
@@ -124,7 +124,7 @@ if(!is_null($website_uri)){
 $nsid = 'com.atproto.repo.createRecord';
 $pdate = date(('Y-m-d\\TH:i:s.u\\Z'));
 $record = [
-    '$type'=>'app.bsky.feed.post',
+    '$type'=>$config['nsid']['post'],
     "text"=>$text,
     "createdAt"=>date(('Y-m-d\\TH:i:s.u\\Z'))
 ];
@@ -141,7 +141,7 @@ if(count($blobs)>0){
         ];
     }
     $record['embed'] = [
-        '$type'  => "app.bsky.embed.images",
+        '$type'  => $config['nsid']['emdeb_images'],
         "images" => $imageelements
     ];
 
@@ -156,7 +156,7 @@ DebugOut($record,"RECORD",$debugthis);
 
 $data = [
     "repo" => $config['session']["did"],
-    "collection" =>"app.bsky.feed.post",
+    "collection" =>$config['nsid']['post'],
     "record" => $record,
 ];
 

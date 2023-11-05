@@ -69,7 +69,7 @@ function atp_session_create($forcenew = false)
 function atp_session_check(){
     global $config;
     $debugthis = false;
-    $nsid = 'app.bsky.feed.getTimeline';
+    $nsid = $config['nsid']['get_timeline'];
     $api = new RestClient([
         'base_url' => $config['atproto']['server'] . $config['atproto']['xrpc-prefix'] . $nsid, 
         

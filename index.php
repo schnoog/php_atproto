@@ -15,6 +15,9 @@ $website_title = "My user defined title";
 $website_description = "My user defined description";
 $website_image = __DIR__ . "/website_image.png"; 
 
+
+DebugOut($config['nsid']);
+
 //The most simple text post - parsing of mentions and links is ENABLED by default
 //$answer = atp_create_post($text);
 
@@ -28,8 +31,8 @@ $website_image = __DIR__ . "/website_image.png";
 //$answer = atp_create_post($text,null,true,true,[],[],$website_uri,$website_title,$website_description,$website_image);
 
 //Get 27 entries of the own timeline and print it by DebugOut
-//$timeline = atp_get_timeline(27);
-//DebugOut($timeline);
+$timeline = atp_get_timeline(27);
+DebugOut($timeline);
 
 
 //Get the DID identified for a handle 

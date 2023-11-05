@@ -3,8 +3,9 @@
 
 $config['atproto']['server'] = "https://bsky.social/";
 $config['atproto']['xrpc-prefix'] = "xrpc/";
-$config['atproto']['account'] = "";
+$config['atproto']['account'] = ""; // your handle, mine is "develobot.bsky.social"
 $config['atproto']['password'] = "";
+$config['atproto']['service'] = "bsky";
 
 $config['atproto']['storedsession_validity'] = 600;  //the check for a valid stored auth token is valid for this amount of seconds
 
