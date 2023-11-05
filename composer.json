@@ -1,6 +1,6 @@
 {
     "name": "schnoog/php_atproto", 
-    "version": "0.0.0.1", 
+    "version": "0.0.0.4", 
     "description": "Lightweight PHP ATProto Implementation", 
     "type": "library", 
     "keywords": ["REST", "api", "client", "aproto", "bluesky", "bsky"], 
