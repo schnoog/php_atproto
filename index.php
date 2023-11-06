@@ -54,13 +54,13 @@ $website_image = __DIR__ . "/website_image.png";
 
 //$tmp = atp_get_data($config["nsid"]['getfollowers'],$data);
 
-$userhandle = 'develobot.bsky.social';
-$userhandle = 'schnoog.eu';
+//$userhandle = 'develobot.bsky.social';
+//$userhandle = 'schnoog.eu';
 //$tmp = atp_graph_getfollowers($userhandle,3);
 //$tmp = atp_get_users_posts($userhandle);
-$tmp = atp_getAll_users_posts($userhandle);
-
-
+//$tmp = atp_getAll_users_posts($userhandle);
+//$tmp = atp_person_search("merz",2);
+$tmp = atp_person_searchAll("merz");
 DebugOut($tmp,"FINAL OUTPUT");
 
 //Search for posts containing "Arduino" and print the result

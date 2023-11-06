@@ -4,7 +4,7 @@ $config['included'][] = "atp_graph.php";
 
 
 /**
- * atp_graph_getfollowers returns the followers of a user handle
+ * atp_graph_getfollowers returns the followers of a user handle (limited)
  * @param mixed $userhandle 
  * @return bool 
  * @throws RestClientException 

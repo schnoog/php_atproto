@@ -22,6 +22,7 @@ $NSID['bsky']= [
     'gethandle' => "com.atproto.identity.resolveHandle",
     'getfollowers' => 'app.bsky.graph.getFollowers',
     'getAuthorFeed' => 'app.bsky.feed.getAuthorFeed',
+    'searchPerson' => 'app.bsky.actor.searchActors',
     
 
 ];
