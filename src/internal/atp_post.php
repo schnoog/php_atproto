@@ -24,10 +24,20 @@ $config['included'][] = "atp_post.php";
         $headers["Content-Type"] =  $content_type;
      }
 
-     $clienconfig =     [
+    $clienconfig =     [
                             'base_url' => $baseurl,
                             'headers' => $headers
                         ];
+    if(isset($config['check_ssl_cert'])){
+        if(!$config['check_ssl_cert'] ){
+            $clienconfig['curl_options'] = [
+                CURLOPT_SSL_VERIFYPEER => false,
+                CURLOPT_SSL_VERIFYHOST => false
+
+            ];
+        }
+    }
+    
     $client = new RestClient($clienconfig); 
 
     if($encode_body){

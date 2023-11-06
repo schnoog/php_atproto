@@ -1,6 +1,7 @@
 <?php
 
 global $config;
+global $NSID;
 
 $config['maindir'] = __DIR__ ."/";
 $config['internaldir'] =  $config['maindir'] . "internal/";
@@ -32,10 +33,10 @@ if(!$isin) {
  */
 
 foreach(glob($config['internaldir'] . "*.php") as $file){
-    require $file;
+    require_once $file;
 }
 
-
+//echo "<pre>" . print_r(get_included_files(),true)."</pre>";
 /**
  * And now bootstrapping
  */

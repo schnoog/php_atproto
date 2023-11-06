@@ -14,11 +14,30 @@ function atp_get_data($nsid,$data = null){
     global $config;
     if (!atp_session_get())return false;
     $debugthis = true;
-    $api = new RestClient([
+
+    $clienconfig =     [
+        'base_url' => $config['atproto']['server'] . $config['atproto']['xrpc-prefix'] . $nsid,
+        'headers' => ['Authorization' => 'Bearer '. $config['session']['accessJwt']], 
+    ];
+    if(isset($config['check_ssl_cert'])){
+        if(!$config['check_ssl_cert'] ){
+            $clienconfig['curl_options'] = [
+                CURLOPT_SSL_VERIFYPEER => false,
+                CURLOPT_SSL_VERIFYHOST => false
+
+            ];
+        }
+    }
+
+
+    $api = new RestClient($clienconfig); 
+
+  /*  $api = new RestClient([
         'base_url' => $config['atproto']['server'] . $config['atproto']['xrpc-prefix'] . $nsid, 
         
         'headers' => ['Authorization' => 'Bearer '. $config['session']['accessJwt']], 
     ]); 
+*/
     if(is_null($data)){
         $result = $api->get("");
     }else{

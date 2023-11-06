@@ -27,8 +27,8 @@ $website_image = __DIR__ . "/website_image.png";
 //DebugOut($config['nsid']);
 
 //The most simple text post - parsing of mentions and links is ENABLED by default
-//$answer = atp_create_post($text);
-
+$answer = atp_create_post($text);
+DebugOut($answer);
 //Now a post, just like above, but this time with the 2 defined images attached, and the $lang keys
 //$text = "now test the new library structure";
 //$answer = atp_create_post($text,$lang,true,true,$images,$images_alts);
@@ -46,7 +46,7 @@ $website_image = __DIR__ . "/website_image.png";
 
 //Get the DID identified for a handle 
 //$tmp = atp_get_did_from_handle("schnoog.eu");
-
+//DebugOut($tmp);
 //$data = [
 //    'actor' => 'develobot.bsky.social'
 //];
@@ -54,11 +54,11 @@ $website_image = __DIR__ . "/website_image.png";
 
 //$tmp = atp_get_data($config["nsid"]['getfollowers'],$data);
 
-$userhandle = 'develobot.bsky.social';
-$tmp = atp_graph_getfollowers($userhandle);
+//$userhandle = 'develobot.bsky.social';
+//$tmp = atp_graph_getfollowers($userhandle);
 
 
-DebugOut($tmp);
+//DebugOut($tmp);
 
 //Search for posts containing "Arduino" and print the result
 //$answer = atp_post_search("Arduino");
