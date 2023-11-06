@@ -21,8 +21,11 @@ $isin = false;
 for($x=0;$x < count($incs); $x++){
 		$inc = $incs[$x];
 		if( strpos($inc,"autoload.php") > 0) $isin = true;
+		
 }
-if(!$isin) require_once($config['maindir'] . "../vendor/autoload.php");
+if(!$isin) {
+	require_once(__DIR__. "../../vendor/autoload.php");
+}
 
 /**
  * And now include all the php files in the internal directory
