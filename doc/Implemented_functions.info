@@ -1,0 +1,10 @@
+endpoint;function;description
+app.bsky.feed.post;atp_create_post;Posting on own timeline
+app.bsky.graph.getFollowers;atp_graph_getfollowers;Get followers of an account (limited limited to max 100 follower)
+app.bsky.graph.getFollowers;atp_graph_getAllFollowers;Wrapper for atp_graph_getfollowers to get ALL followers
+app.bsky.feed.getTimeline;atp_get_timeline;Get the own feed (timeline) (with limits)
+com.atproto.identity.resolveHandle;atp_get_did_from_handle;Get the did handle of a user (by name)
+https://search.bsky.social/search/posts;atp_post_search;Search service - non API
+app.bsky.feed.getAuthorFeed;atp_get_users_posts;Get an users feed (timeline)  (limited to max 100 posts)
+app.bsky.feed.getAuthorFeed;atp_getAll_users_posts;Wrapper for atp_get_users_posts to get ALL posts
+

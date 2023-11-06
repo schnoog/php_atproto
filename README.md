@@ -206,6 +206,14 @@ DebugOut($answer);
 
 ```
 
+## More info
+
+I'll create a list with the functions and endpoints implemented and will try to keep it up to date.
+
+[Implemented_sorted_by_Endpoint.md](doc/Implemented_sorted_by_Endpoint.md)
+
+[Implemented_sorted_by_Funtions.md](doc/Implemented_sorted_by_Funtions.md)
+
 
 
 

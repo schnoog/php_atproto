@@ -24,7 +24,7 @@ $website_description = "My user defined description";
 $website_image = __DIR__ . "/website_image.png"; 
 
 
-//DebugOut($config['nsid']);
+
 
 //The most simple text post - parsing of mentions and links is ENABLED by default
 //$answer = atp_create_post($text);
@@ -57,9 +57,11 @@ $website_image = __DIR__ . "/website_image.png";
 $userhandle = 'develobot.bsky.social';
 $userhandle = 'schnoog.eu';
 //$tmp = atp_graph_getfollowers($userhandle,3);
-$tmp = atp_graph_getAllFollowers($userhandle);
+//$tmp = atp_get_users_posts($userhandle);
+$tmp = atp_getAll_users_posts($userhandle);
 
-DebugOut($tmp);
+
+DebugOut($tmp,"FINAL OUTPUT");
 
 //Search for posts containing "Arduino" and print the result
 //$answer = atp_post_search("Arduino");

@@ -21,6 +21,7 @@ $NSID['bsky']= [
     'searchpost' => "app.bsky.feed.searchPosts",
     'gethandle' => "com.atproto.identity.resolveHandle",
     'getfollowers' => 'app.bsky.graph.getFollowers',
+    'getAuthorFeed' => 'app.bsky.feed.getAuthorFeed',
     
 
 ];

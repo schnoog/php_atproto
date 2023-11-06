@@ -5,3 +5,4 @@ composer.lock
 #*.png
 atproto_info/*
 atproto_info/
+doc/tmp.info

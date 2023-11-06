@@ -4,7 +4,7 @@ $config['included'][] = "atp_createpost.php";
 
 
 /**
- * atp_create_post 
+ * atp_create_post - Creates a post on the own feed
  * @param mixed $text 
  * @param mixed $langs 
  * @param bool $add_link_facets 
