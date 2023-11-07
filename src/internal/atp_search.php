@@ -99,3 +99,45 @@ function atp_getAll_users_posts($userhandle){
     }
     return $feeds;
 }
+
+/**
+ * atp_getAll_blocks - Returns ALL blocks of the current used account
+ * @return array 
+ * @throws RestClientException 
+ */
+function atp_getAll_blocks(){
+    global $config;
+    $actors = array();
+    $singlecall = 100;
+    $cursor = "X";  
+    while(strlen($cursor) > 0){
+        $work = atp_get_blocks($singlecall,$cursor);
+        $cursor = "";
+        if(isset($work['cursor']))$cursor = $work['cursor'];
+        $runfol = $work['blocks'];
+        for($x = 0; $x < count($runfol);$x++){
+            $actors[] = $runfol[$x];
+        }
+    }
+    return $actors;
+}
+
+/**
+ * atp_get_blocks - Returns blocks of the current used account (limited)
+ * @param int $limit 
+ * @param string $cursor 
+ * @return bool 
+ * @throws RestClientException 
+ */
+function atp_get_blocks($limit = 50,$cursor = ''){
+    global $config;
+    $getconfig = [
+        'limit' => $limit,       
+    ];
+    if(strlen($cursor)> 1){
+        $getconfig['cursor'] = $cursor;
+    } 
+    $retval = atp_get_data($config['nsid']['getBlocks'],$getconfig);
+    return $retval;           
+}
+

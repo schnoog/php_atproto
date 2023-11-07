@@ -6,3 +6,4 @@ composer.lock
 atproto_info/*
 atproto_info/
 doc/tmp.info
+rename_functions.sh

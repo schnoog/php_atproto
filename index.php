@@ -60,7 +60,11 @@ $website_image = __DIR__ . "/website_image.png";
 //$tmp = atp_get_users_posts($userhandle);
 //$tmp = atp_getAll_users_posts($userhandle);
 //$tmp = atp_person_search("merz",2);
-$tmp = atp_person_searchAll("merz");
+//$tmp = atp_person_searchAll("merz");
+//$tmp = atp_get_blocks();
+$tmp = atp_getAll_blocks();
+
+//$tmp = atp_get_data('app.bsky.graph.getBlocks',[]);
 DebugOut($tmp,"FINAL OUTPUT");
 
 //Search for posts containing "Arduino" and print the result
