@@ -15,7 +15,7 @@ function findLabel {
     LABEL="$1"
     FF=$(dirname $(pwd))"/src/"
 
-    grep -B 15 -r "function $LABEL" "$FF" | grep "\* $LABEL" | cut -d '*' -f 2 | cut -d '-' -f 2-
+    grep -B 15 -r "function $LABEL" "$FF" | grep "\* $LABEL" | cut -d '*' -f 2 | cut -d '-' -f 2- | head -n 1
 }
 
 
