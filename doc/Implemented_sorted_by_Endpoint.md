@@ -2,8 +2,9 @@
 
 ## Implemented endpoints sorted by endpoint
 
-| Returns blocks of the current used account (limited)                                   |
+| endpoint                                                                               | function                     | description                                                                            |
 | -------------------------------------------------------------------------------------- | ---------------------------- | -------------------------------------------------------------------------------------- |
+| Returns blocks of the current used account (limited)                                   |
 | Returns the persons / actors for a search term (limit)                                 |
 | atp_get_user_followers_all returns ALL the followers of a user handle in a handy array |
 | get ALL posts from the feed of a user                                                  |
