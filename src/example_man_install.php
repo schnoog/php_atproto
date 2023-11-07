@@ -43,14 +43,14 @@ $website_image = __DIR__ . "/website_image.png";
 //$answer = atp_create_post($text,null,true,true,[],[],$website_uri,$website_title,$website_description,$website_image);
 
 //Get 27 entries of the own timeline and print it by DebugOut
-//$timeline = atp_get_timeline(27);
+//$timeline = atp_get_own_timeline(27);
 //DebugOut($timeline);
 
 
 //Get the DID identified for a handle 
-//$tmp = atp_get_did_from_handle("develobot.bsky.social");
+//$tmp = atp_get_user_did_from_handle("develobot.bsky.social");
 //DebugOut($tmp);
 
 //Search for posts containing "Arduino" and print the result
-//$answer = atp_post_search("Arduino");
+//$answer = atp_search_posts_by_term("Arduino");
 //DebugOut($answer);

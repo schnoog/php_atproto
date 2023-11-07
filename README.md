@@ -12,6 +12,10 @@ Currently (I would call it pre-alpha) I include only one 3rd party library, name
 
 Maybe it will become more in the future. 
 
+#### V0.0.0.5 remark
+To make it all less of a mess, I renamed almost all functions.....
+
+
 ## Installation
 ### Manual installation
 This means you have a copy of the whole repository either by
@@ -182,7 +186,7 @@ Yes, also reading the own timeline (or feed or however it's called) is also quit
 require_once(__DIR__ . "/src/includer.php");
 
 //Get 27 entries of the own timeline and print it by DebugOut
-$timeline = atp_get_timeline(27);
+$timeline = atp_get_own_timeline(27);
 
 DebugOut($timeline);
 
@@ -200,7 +204,7 @@ Not nice, but it works however
 require_once(__DIR__ . "/src/includer.php");
 
 //Search for posts containing "Arduino" and print the result
-$answer = atp_post_search("Arduino");
+$answer = atp_search_posts_by_term("Arduino");
 DebugOut($answer);
 
 

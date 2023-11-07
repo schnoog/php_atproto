@@ -42,7 +42,7 @@ function atp_get_website_info($url,$image ="" ,$title="",$desc=""){
         return $wc;
     }
     
-    $mtags = atp_getMetaTags($fp);
+    $mtags = atp_helper_get_metatags($fp);
 
     if(!$OK_img){
         if(isset($mtags['og:image'])) {
@@ -89,12 +89,12 @@ function atp_get_website_info($url,$image ="" ,$title="",$desc=""){
 
 
 /**
- * atp_getMetaTags - regex extraction of meta tags of a given string
+ * atp_helper_get_metatags - regex extraction of meta tags of a given string
  * @param mixed $str 
  * @return array 
  */
 
- function atp_getMetaTags($str)
+ function atp_helper_get_metatags($str)
  {
    $pattern = '
    ~<\s*meta\s
@@ -138,7 +138,7 @@ function atp_helper_get_mention_facets_from_text($text){
         $handle = $match[0];
         $start = $match[1];
 
-        $did = atp_get_did_from_handle(substr($handle, 1));
+        $did = atp_get_user_did_from_handle(substr($handle, 1));
         $facet =[ 
             'did' => $did,
             'start' =>  $start,

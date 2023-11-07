@@ -56,7 +56,7 @@ echo '# php_atproto' > "$FLIST"
 echo '' >> "$FLIST"
 echo '## Implemented endpoints sorted by function' >> "$FLIST"
 echo '' >> "$FLIST"
-cat -n+2 "$INPUT" | sort -t ';' -k 2 | markdown-table -s';' >> "$FLIST"
+cat "$INPUT" | sort -t ';' -k 2 | markdown-table -s';' >> "$FLIST"
 
 
 

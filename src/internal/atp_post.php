@@ -3,20 +3,20 @@
 $config['included'][] = "atp_post.php";
 
 /**
- * atp_post_data  Expects a NSID and some data, returns whatever the endpoint puts out
+ * atp_api_post_data  Expects a NSID and some data, returns whatever the endpoint puts out
  * @param mixed $nsid 
  * @param mixed $data 
  * @return bool 
  * @throws RestClientException 
  */
 
- function atp_post_data($nsid, $data = null,$content_type = 'application/json',$encode_body=true)
+ function atp_api_post_data($nsid, $data = null,$content_type = 'application/json',$encode_body=true)
  {
      global $config;
      if (!atp_session_get()) {
          return false;
      }
-     $debugthis = true;
+     $debugthis = false;
 
      $baseurl = $config['atproto']['server'] . $config['atproto']['xrpc-prefix'] . $nsid;
      $headers['Authorization'] = 'Bearer '. $config['session']['accessJwt'];

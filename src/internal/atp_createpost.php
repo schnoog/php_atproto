@@ -34,7 +34,7 @@ global $config;
 if (!atp_session_get()) {
     return false;
 }
-$debugthis = true;
+$debugthis = false;
 $facets = array();
 $blobs = array();
 $imageelements = array();
@@ -161,7 +161,7 @@ $data = [
 ];
 
 
-$ret = atp_post_data($nsid,$data);
+$ret = atp_api_post_data($nsid,$data);
 return $ret;
 }
 

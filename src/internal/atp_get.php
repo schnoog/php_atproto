@@ -3,17 +3,17 @@
 $config['included'][] = "atp_get.php";
 
 /**
- * atp_get_data  Expects a NSID and some data, returns whatever the endpoint puts out
+ * atp_api_get_data  Expects a NSID and some data, returns whatever the endpoint puts out
  * @param mixed $nsid 
  * @param mixed $data 
  * @return bool 
  * @throws RestClientException 
  */
 
-function atp_get_data($nsid,$data = null){
+function atp_api_get_data($nsid,$data = null){
     global $config;
     if (!atp_session_get())return false;
-    $debugthis = true;
+    $debugthis = false;
 
     $clienconfig =     [
         'base_url' => $config['atproto']['server'] . $config['atproto']['xrpc-prefix'] . $nsid,

@@ -40,34 +40,34 @@ $website_image = __DIR__ . "/website_image.png";
 //$answer = atp_create_post($text,null,true,true,[],[],$website_uri,$website_title,$website_description,$website_image);
 
 //Get 27 entries of the own timeline and print it by DebugOut
-//$timeline = atp_get_timeline(27);
+//$timeline = atp_get_own_timeline(27);
 //DebugOut($timeline);
 
 
 //Get the DID identified for a handle 
-//$tmp = atp_get_did_from_handle("schnoog.eu");
+//$tmp = atp_get_user_did_from_handle("schnoog.eu");
 //DebugOut($tmp);
 //$data = [
 //    'actor' => 'develobot.bsky.social'
 //];
 
 
-//$tmp = atp_get_data($config["nsid"]['getfollowers'],$data);
+//$tmp = atp_api_get_data($config["nsid"]['getfollowers'],$data);
 
 //$userhandle = 'develobot.bsky.social';
 //$userhandle = 'schnoog.eu';
-//$tmp = atp_graph_getfollowers($userhandle,3);
-//$tmp = atp_get_users_posts($userhandle);
-//$tmp = atp_getAll_users_posts($userhandle);
-//$tmp = atp_person_search("merz",2);
-//$tmp = atp_person_searchAll("merz");
-//$tmp = atp_get_blocks();
-$tmp = atp_getAll_blocks();
+//$tmp = atp_get_user_followers($userhandle,3);
+//$tmp = atp_get_user_posts($userhandle);
+//$tmp = atp_get_user_posts_all($userhandle);
+//$tmp = atp_search_user_by_term("merz",2);
+//$tmp = atp_search_user_by_termAll("merz");
+//$tmp = atp_get_own_blocks();
+//$tmp = atp_get_own_blocks_all();
 
-//$tmp = atp_get_data('app.bsky.graph.getBlocks',[]);
-DebugOut($tmp,"FINAL OUTPUT");
+//$tmp = atp_api_get_data('app.bsky.graph.getBlocks',[]);
+//DebugOut($tmp,"FINAL OUTPUT");
 
 //Search for posts containing "Arduino" and print the result
-//$answer = atp_post_search("Arduino");
-//DebugOut($answer);
+//$answer = atp_search_posts_by_term("Arduino");
+//DebugOut($tmp);
 

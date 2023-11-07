@@ -4,14 +4,14 @@ $config['included'][] = "atp_net_helper.php";
 
 
 /**
- * atp_get_timeline - returns the number of entries defined from the own timeline
+ * atp_get_own_timeline - returns the number of entries defined from the own timeline
  * @param int $limit 
  * @return bool 
  * @throws RestClientException 
  */
-function atp_get_timeline($limit = 50){
+function atp_get_own_timeline($limit = 50){
     global $config;
-    $retval = atp_get_data($config['nsid']['get_timeline'],["limit" => $limit]);
+    $retval = atp_api_get_data($config['nsid']['get_timeline'],["limit" => $limit]);
     return $retval;
 }
 
@@ -31,9 +31,9 @@ function atp_create_file_blob($filename){
         $filename = $tmpname;
         $tmpfile = true;
 
-        DebugOut(['REMOTE IMAGE'],"REMOTE IMAGE");
+      //  DebugOut(['REMOTE IMAGE'],"REMOTE IMAGE");
     }else{
-        DebugOut(['LOCAL IMAGE'],"LOCAL IMAGE");
+      //  DebugOut(['LOCAL IMAGE'],"LOCAL IMAGE");
 
     }
 
@@ -43,9 +43,9 @@ function atp_create_file_blob($filename){
     $filemime = mime_content_type($filename);
     $nsid = 'com.atproto.repo.uploadBlob';
     $data =  $filedata;
-    DebugOut($filemime,"MIME");
-    $retval = atp_post_data($nsid,$data,$filemime,false);
-    DebugOut($retval, "BlobUpload");
+    //DebugOut($filemime,"MIME");
+    $retval = atp_api_post_data($nsid,$data,$filemime,false);
+    //DebugOut($retval, "BlobUpload");
     $blob = [
         '$type'=> "blob",
         'ref' => [ '$link' => $retval['blob']['ref']['$link'] ],
@@ -62,17 +62,17 @@ function atp_create_file_blob($filename){
 
 
 /**
- * atp_get_did_from_handle - returns the did of a given handle (f.e. schnoog.eu)
+ * atp_get_user_did_from_handle - returns the did of a given handle (f.e. schnoog.eu)
  * @param mixed $handle 
  * @return mixed 
  * @throws RestClientException 
  */
-function atp_get_did_from_handle($handle){
+function atp_get_user_did_from_handle($handle){
     global $config;
     $data = [
                 'handle' => $handle,
     ];
-    $diddata = atp_get_data($config['nsid']['gethandle'],$data);
+    $diddata = atp_api_get_data($config['nsid']['gethandle'],$data);
     if(!$diddata) return false;
     return $diddata['did'];
 }
