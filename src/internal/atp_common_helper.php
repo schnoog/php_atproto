@@ -175,6 +175,17 @@ function atp_helper_get_link_facets_from_text($text)
         return $facets;
 }
 
+/**
+ * atp_helper_get_currentdate_formatted - returns the current date in the format expected by the API
+ * @return string 
+ */
+function atp_helper_get_currentdate_formatted(){
+    return date(('Y-m-d\\TH:i:s.u\\Z'));
+}
+
+
+
+
 
 
 /**

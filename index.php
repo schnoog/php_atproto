@@ -23,7 +23,16 @@ $website_title = "My user defined title";
 $website_description = "My user defined description";
 $website_image = __DIR__ . "/website_image.png"; 
 
+$pu = "at://did:plc:rp2wjmtsimasnyrxyihbd6xk/app.bsky.feed.post/3kdjicidq7z23";
+$pc = "bafyreidelk3zrhlmdz32wal5iuakjqeucri6triclboq7zlula6mkbe6ru";
+$ru = $pu;
+$rc = $pc;
 
+//reply to a post
+//$tmp = atp_create_reply($ru,$rc,$pu,$pc,"My first API reply");
+//quote a post
+$tmp = atp_create_quote($pu,$pc,"My very first API quote. And again the question: Will it work?");
+DebugOut($tmp);
 
 
 //The most simple text post - parsing of mentions and links is ENABLED by default

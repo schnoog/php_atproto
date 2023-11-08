@@ -10,6 +10,8 @@
 | app.bsky.feed.getAuthorFeed             | atp_get_user_posts_all       | get ALL posts from the feed of a user                                                  |
 | app.bsky.feed.getTimeline               | atp_get_own_timeline         | returns the number of entries defined from the own timeline                            |
 | app.bsky.feed.post                      | atp_create_post              | Creates a post on the own feed                                                         |
+| app.bsky.feed.post                      | atp_create_quote             | Creates a quote post                                                                   |
+| app.bsky.feed.post                      | atp_create_reply             | Creates a reply to a post                                                              |
 | app.bsky.graph.getBlocks                | atp_get_own_blocks           | Returns ALL blocks of the current used account                                         |
 | app.bsky.graph.getBlocks                | atp_get_own_blocks_all       | Returns ALL blocks of the current used account                                         |
 | app.bsky.graph.getFollowers             | atp_get_user_followers       | atp_get_user_followers returns the followers of a user handle (limited)                |
