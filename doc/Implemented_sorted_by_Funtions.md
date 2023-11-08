@@ -5,6 +5,8 @@
 | endpoint                                | function                     | description                                                                            |
 | --------------------------------------- | ---------------------------- | -------------------------------------------------------------------------------------- |
 | app.bsky.feed.post                      | atp_create_post              | Creates a post on the own feed                                                         |
+| app.bsky.feed.post                      | atp_create_quote             | Creates a quote post                                                                   |
+| app.bsky.feed.post                      | atp_create_reply             | Creates a reply to a post                                                              |
 | app.bsky.graph.getBlocks                | atp_get_own_blocks           | Returns ALL blocks of the current used account                                         |
 | app.bsky.graph.getBlocks                | atp_get_own_blocks_all       | Returns ALL blocks of the current used account                                         |
 | app.bsky.feed.getTimeline               | atp_get_own_timeline         | returns the number of entries defined from the own timeline                            |

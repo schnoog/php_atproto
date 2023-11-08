@@ -28,7 +28,8 @@ function atp_create_post(
     $website_uri = null,
     $website_title = "",
     $website_description = "",
-    $website_image = ""
+    $website_image = "",
+    $additional_root_element = array()
 ){
 global $config;
 if (!atp_session_get()) {
@@ -151,6 +152,15 @@ if(count($wcembed) > 0){
     $record['embed'] = $wcembed;
 }
 
+if(count($additional_root_element)){
+    foreach($additional_root_element as $key => $value){
+        if(isset($record[$key])) unset($record[$key]);
+        $record[$key] = $value;
+
+    }
+}
+
+
 
 DebugOut($record,"RECORD",$debugthis);
 
@@ -168,8 +178,103 @@ return $ret;
 
 
 
+/**
+ * atp_create_reply - Creates a reply to a post
+ * @param mixed $root_uri 
+ * @param mixed $root_cid 
+ * @param mixed $parent_uri 
+ * @param mixed $parent_cid 
+ * @param mixed $text 
+ * @param mixed $langs 
+ * @param bool $add_link_facets 
+ * @param bool $add_mentions_facets 
+ * @param array $images 
+ * @param array $images_alts 
+ * @param mixed $website_uri 
+ * @param string $website_title 
+ * @param string $website_description 
+ * @param string $website_image 
+ * @return bool 
+ * @throws RestClientException 
+ */
+function atp_create_reply(
+    $root_uri,
+    $root_cid,
+    $parent_uri,
+    $parent_cid,
+    $text,
+    $langs = null,
+    $add_link_facets = true, 
+    $add_mentions_facets = true,
+    $images = array(),
+    $images_alts =array(),
+    $website_uri = null,
+    $website_title = "",
+    $website_description = "",
+    $website_image = ""
+){
+
+    $data['reply'] = [
+        'root' => [
+            'uri' => $root_uri,
+            'cid' => $root_cid
+        ],
+        'parent' => [
+            'uri' => $parent_uri,
+            'cid' => $parent_cid
+        ]
+    ];
+
+    return atp_create_post(
+        $text,$langs,$add_link_facets,$add_mentions_facets,$images,$images_alts,$website_uri,$website_title,$website_description,$website_image,$data
+    );
+}
+
+
+/**
+ * atp_create_quote - Creates a quote post
+ * @param mixed $record_uri 
+ * @param mixed $record_cid 
+ * @param mixed $text 
+ * @param mixed $langs 
+ * @param bool $add_link_facets 
+ * @param bool $add_mentions_facets 
+ * @param array $images 
+ * @param array $images_alts 
+ * @param mixed $website_uri 
+ * @param string $website_title 
+ * @param string $website_description 
+ * @param string $website_image 
+ * @return bool 
+ * @throws RestClientException 
+ */
+function atp_create_quote(
+    $record_uri,
+    $record_cid,
+    $text,
+    $langs = null,
+    $add_link_facets = true, 
+    $add_mentions_facets = true,
+    $images = array(),
+    $images_alts =array(),
+    $website_uri = null,
+    $website_title = "",
+    $website_description = "",
+    $website_image = ""
+){
+    global $config;
+    $data['embed'] = [
+        '$type' => $config['nsid']['embed_record'] ,
+        'record' => [
+            'uri' => $record_uri,
+            'cid' => $record_cid
+        ]
+    ];
 
 
 
-
+    return atp_create_post(
+        $text,$langs,$add_link_facets,$add_mentions_facets,$images,$images_alts,$website_uri,$website_title,$website_description,$website_image,$data
+    );
+}
 

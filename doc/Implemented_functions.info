@@ -11,3 +11,5 @@ app.bsky.actor.searchActors;atp_search_user_by_term;Returns the persons / actors
 app.bsky.actor.searchActors;atp_search_user_by_termAll;Returns ALL persons / actors for a search term
 app.bsky.graph.getBlocks;atp_get_own_blocks_all;Returns ALL blocks of the current used account
 app.bsky.graph.getBlocks;atp_get_own_blocks;Returns blocks of the current used account (limited)
+app.bsky.feed.post;atp_create_reply;Creates a reply to a post
+app.bsky.feed.post;atp_create_quote;Creates a quote post
