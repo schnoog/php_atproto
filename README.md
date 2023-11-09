@@ -14,25 +14,13 @@ Maybe it will become more in the future.
 
 #### V0.0.0.5 remark
 To make it all less of a mess, I renamed almost all functions.....
+You can find a list of the functions I implemented here:
 
+[Implemented functions  sorted by Endpoint.md](doc/Implemented_sorted_by_Endpoint.md)
+
+[Implemented functions sorted by the name of the function.md](doc/Implemented_sorted_by_Funtions.md)
 
 ## Installation
-### Manual installation
-This means you have a copy of the whole repository either by
- * Cloning from Github
- * * git clone git@github.com:schnoog/php_atproto.git ->your install directory<-
- *  * git clone https://github.com/schnoog/php_atproto.git ->your install directory<-
-
- or
- 
- *  Downloading the [zip archive from Github ](https://github.com/schnoog/php_atproto/archive/refs/heads/main.zip) and extracting it to ->your install directory<-
- * 
- 
-After you have the files in your desired directory, copy the file 
-`config.dist.php` into your install directory and rename it to `config.php`
-
-Change the content of the `config.php` and enter your credentials
-
 
 ### Composer installation
 You can install the library with composer by executing
@@ -51,6 +39,43 @@ or use the following command from within your install directory to copy the file
 `php -r 'if(!file_exists(__DIR__ . "/config.php"))   copy (__DIR__ . "/vendor/schnoog/php_atproto/src/config.dist.php", __DIR__ . "/config.php");'`
 
 Change the content of the `config.php` and enter your credentials
+
+### Package installation
+**This is the way to go if you don't have installed composer at all.**
+
+I created a second repository which includes all files required to run this thing. 
+
+Download the zipped version from here:
+[Packed php_atproto version](https://github.com/schnoog/php_atproto_packed)
+
+Just unzip it, set your credentials in the `config.php` and you're ready to go. 
+Yes, it's really that easy 
+
+
+
+
+
+
+### Manual installation
+This means you have a copy of the whole repository either by
+ * Cloning from Github
+ * * git clone git@github.com:schnoog/php_atproto.git ->your install directory<-
+ *  * git clone https://github.com/schnoog/php_atproto.git ->your install directory<-
+
+ or
+ 
+ *  Downloading the [zip archive from Github ](https://github.com/schnoog/php_atproto/archive/refs/heads/main.zip) and extracting it to ->your install directory<-
+ * 
+ 
+After you have the files in your desired directory, copy the file 
+`config.dist.php` into your install directory and rename it to `config.php`
+
+Don't forget to install the dependency by executing
+`composer install`
+
+Change the content of the `config.php` and enter your credentials
+
+
 
 
 ## My requirements
