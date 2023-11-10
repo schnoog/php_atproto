@@ -13,3 +13,5 @@ app.bsky.graph.getBlocks;atp_get_own_blocks_all;Returns ALL blocks of the curren
 app.bsky.graph.getBlocks;atp_get_own_blocks;Returns blocks of the current used account (limited)
 app.bsky.feed.post;atp_create_reply;Creates a reply to a post
 app.bsky.feed.post;atp_create_quote;Creates a quote post
+app.bsky.notification.listNotifications;atp_get_own_notifications;Returns the own notifications (limited)
+app.bsky.notification.listNotifications;atp_get_own_notifications_all;Returns ALL own notifications (limited)

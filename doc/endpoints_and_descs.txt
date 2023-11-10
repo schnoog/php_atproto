@@ -1,0 +1,50 @@
+Extracted Fri Nov 10 15:15:46     2023:
+app.bsky.actor.defs:A reference to an actor in the network.
+app.bsky.actor.getPreferences:Get private preferences attached to the account.
+app.bsky.actor.getSuggestions:Get a list of actors suggested for following. Used in discovery UIs.
+app.bsky.actor.putPreferences:Sets the private preferences attached to the account.
+app.bsky.actor.searchActors:Find actors (profiles) matching search criteria.
+app.bsky.actor.searchActorsTypeahead:Find actor suggestions for a search term.
+app.bsky.embed.external:A representation of some externally linked content, embedded in another form of content
+app.bsky.embed.images:A set of images embedded in some other form of content
+app.bsky.embed.record:A representation of a record embedded in another form of content
+app.bsky.embed.recordWithMedia:A representation of a record embedded in another form of content, alongside other compatible embeds
+app.bsky.feed.describeFeedGenerator:Returns information about a given feed generator including TOS & offered feed URIs
+app.bsky.feed.generator:A declaration of the existence of a feed generator
+app.bsky.feed.getActorFeeds:Retrieve a list of feeds created by a given actor
+app.bsky.feed.getActorLikes:A view of the posts liked by an actor.
+app.bsky.feed.getAuthorFeed:A view of an actor's feed.
+app.bsky.feed.getFeed:Compose and hydrate a feed from a user's selected feed generator
+app.bsky.feed.getFeedGenerator:Get information about a specific feed offered by a feed generator, such as its online status
+app.bsky.feed.getFeedGenerators:Get information about a list of feed generators
+app.bsky.feed.getFeedSkeleton:A skeleton of a feed provided by a feed generator
+app.bsky.feed.getListFeed:A view of a recent posts from actors in a list
+app.bsky.feed.getPosts:A view of an actor's feed.
+app.bsky.feed.getSuggestedFeeds:Get a list of suggested feeds for the viewer.
+app.bsky.feed.getTimeline:A view of the user's home timeline.
+app.bsky.feed.searchPosts:Find posts matching search criteria
+app.bsky.feed.threadgate:Defines interaction gating rules for a thread. The rkey of the threadgate record should match the rkey of the thread's root post.
+app.bsky.graph.block:A block.
+app.bsky.graph.follow:A social follow.
+app.bsky.graph.getBlocks:Who is the requester's account blocking?
+app.bsky.graph.getFollowers:Who is following an actor?
+app.bsky.graph.getFollows:Who is an actor following?
+app.bsky.graph.getList:Fetch a list of actors
+app.bsky.graph.getListBlocks:Which lists is the requester's account blocking?
+app.bsky.graph.getListMutes:Which lists is the requester's account muting?
+app.bsky.graph.getLists:Fetch a list of lists that belong to an actor
+app.bsky.graph.getMutes:Who does the viewer mute?
+app.bsky.graph.getSuggestedFollowsByActor:Get suggested follows related to a given actor.
+app.bsky.graph.list:A declaration of a list of actors.
+app.bsky.graph.listblock:A block of an entire list of actors.
+app.bsky.graph.listitem:An item under a declared list of actors
+app.bsky.graph.muteActor:Mute an actor by did or handle.
+app.bsky.graph.muteActorList:Mute a list of actors.
+app.bsky.graph.unmuteActor:Unmute an actor by did or handle.
+app.bsky.graph.unmuteActorList:Unmute a list of actors.
+app.bsky.notification.registerPush:Register for push notifications with a service
+app.bsky.notification.updateSeen:Notify server that the user has seen notifications.
+app.bsky.unspecced.getPopularFeedGenerators:An unspecced view of globally popular feed generators
+app.bsky.unspecced.getTimelineSkeleton:A skeleton of a timeline - UNSPECCED & WILL GO AWAY SOON
+app.bsky.unspecced.searchActorsSkeleton:Backend Actors (profile) search, returning only skeleton
+app.bsky.unspecced.searchPostsSkeleton:Backend Posts search, returning only skeleton
