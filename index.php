@@ -36,6 +36,11 @@ $rc = $pc;
 $tmp = atp_get_own_notifications_all();
 DebugOut($tmp);
 
+//reply to a post
+//$tmp = atp_create_reply($ru,$rc,$pu,$pc,"My first API reply");
+//quote a post
+//$tmp = atp_create_quote($pu,$pc,"My very first API quote. And again the question: Will it work?");
+//DebugOut($tmp);
 
 
 //The most simple text post - parsing of mentions and links is ENABLED by default
