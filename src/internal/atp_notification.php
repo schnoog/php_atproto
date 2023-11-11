@@ -43,5 +43,5 @@ function atp_get_own_notifications_all(){
                 $workA[] = $runfol[$x];
             }
         }
-        return $workA;
+        return ["notifications" => $workA];
 }

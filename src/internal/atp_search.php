@@ -9,7 +9,7 @@ $config['included'][] = "atp_search.php";
  * @throws RestClientException 
  */
 
- function atp_search_user_by_termAll($searchterm){
+ function atp_search_user_by_term_all($searchterm){
     global $config;
     $actors = array();
     $singlecall = 100;
@@ -23,7 +23,7 @@ $config['included'][] = "atp_search.php";
             $actors[] = $runfol[$x];
         }
     }
-    return $actors;
+    return ['actors' => $actors];
 }
 
 /**
@@ -97,7 +97,7 @@ function atp_get_user_posts_all($userhandle){
             $feeds[] = $runfol[$x];
         }
     }
-    return $feeds;
+    return ['feed' => $feeds];
 }
 
 /**

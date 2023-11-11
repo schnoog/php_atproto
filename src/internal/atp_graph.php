@@ -44,5 +44,5 @@ function atp_get_user_followers_all($userhandle){
                 $followers[] = $runfol[$x];
             }
         }
-        return $followers;
+        return ['followers' => $followers];
 }
