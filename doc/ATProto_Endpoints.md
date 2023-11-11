@@ -10,7 +10,7 @@ This is just a small list of endpoints I extracted from
 |:black_square_button:|app.bsky.actor.getPreferences|Get private preferences attached to the account.|
 |:black_square_button:|app.bsky.actor.getSuggestions|Get a list of actors suggested for following. Used in discovery UIs.|
 |:black_square_button:|app.bsky.actor.putPreferences|Sets the private preferences attached to the account.|
-|:black_square_button:|app.bsky.actor.searchActors|Find actors (profiles) matching search criteria.|
+|:white_check_mark:|app.bsky.actor.searchActors|Find actors (profiles) matching search criteria.|
 |:black_square_button:|app.bsky.actor.searchActorsTypeahead|Find actor suggestions for a search term.|
 |:black_square_button:|app.bsky.embed.external|A representation of some externally linked content, embedded in another form of content|
 |:black_square_button:|app.bsky.embed.images|A set of images embedded in some other form of content|
@@ -20,7 +20,7 @@ This is just a small list of endpoints I extracted from
 |:black_square_button:|app.bsky.feed.generator|A declaration of the existence of a feed generator|
 |:black_square_button:|app.bsky.feed.getActorFeeds|Retrieve a list of feeds created by a given actor|
 |:black_square_button:|app.bsky.feed.getActorLikes|A view of the posts liked by an actor.|
-|:black_square_button:|app.bsky.feed.getAuthorFeed|A view of an actor's feed.|
+|:white_check_mark:|app.bsky.feed.getAuthorFeed|A view of an actor's feed.|
 |:black_square_button:|app.bsky.feed.getFeed|Compose and hydrate a feed from a user's selected feed generator|
 |:black_square_button:|app.bsky.feed.getFeedGenerator|Get information about a specific feed offered by a feed generator, such as its online status|
 |:black_square_button:|app.bsky.feed.getFeedGenerators|Get information about a list of feed generators|
@@ -33,8 +33,8 @@ This is just a small list of endpoints I extracted from
 |:black_square_button:|app.bsky.feed.threadgate|Defines interaction gating rules for a thread. The rkey of the threadgate record should match the rkey of the thread's root post.|
 |:black_square_button:|app.bsky.graph.block|A block.|
 |:black_square_button:|app.bsky.graph.follow|A social follow.|
-|:black_square_button:|app.bsky.graph.getBlocks|Who is the requester's account blocking?|
-|:black_square_button:|app.bsky.graph.getFollowers|Who is following an actor?|
+|:white_check_mark:|app.bsky.graph.getBlocks|Who is the requester's account blocking?|
+|:white_check_mark:|app.bsky.graph.getFollowers|Who is following an actor?|
 |:black_square_button:|app.bsky.graph.getFollows|Who is an actor following?|
 |:black_square_button:|app.bsky.graph.getList|Fetch a list of actors|
 |:black_square_button:|app.bsky.graph.getListBlocks|Which lists is the requester's account blocking?|

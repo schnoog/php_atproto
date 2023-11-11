@@ -35,7 +35,8 @@ then
     de=""
 
 else
-    if [ $(grep "$id" "Implemented_functions.info") ]
+    in=$(grep "$id" "Implemented_functions.info" | wc -l)
+    if [ "$in" != "0" ]
     then
         check="$here"
     else
