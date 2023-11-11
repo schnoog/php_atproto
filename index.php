@@ -29,12 +29,12 @@ $ru = $pu;
 $rc = $pc;
 
 //reply to a post
-//$tmp = atp_create_reply($ru,$rc,$pu,$pc,"My first API reply");
+//$tmp = atp_create_reply($ru,$rc,$pu,$pc,"Another API reply");
 //quote a post
 //$tmp = atp_create_quote($pu,$pc,"My very first API quote. And again the question: Will it work?");
 
-$tmp = atp_get_own_notifications_all();
-DebugOut($tmp);
+//$tmp = atp_get_own_notifications_all();
+//DebugOut($tmp);
 
 //reply to a post
 //$tmp = atp_create_reply($ru,$rc,$pu,$pc,"My first API reply");
@@ -48,7 +48,9 @@ DebugOut($tmp);
 //DebugOut($answer);
 //Now a post, just like above, but this time with the 2 defined images attached, and the $lang keys
 //$text = "now test the new library structure";
-//$answer = atp_create_post($text,$lang,true,true,$images,$images_alts);
+
+
+
 
 //And now a post which includes a webcard, for which we only provide the URL
 //$answer = atp_create_post($text,$lang,true,true,[],[],$website_uri);
@@ -68,6 +70,10 @@ DebugOut($tmp);
 //    'actor' => 'develobot.bsky.social'
 //];
 
+//$tmp = atp_create_post($text);
+$tmp = atp_delete_post("3kdwppu3r632b"); // the last part of  at://did:plc:rp2wjmtsimasnyrxyihbd6xk/app.bsky.feed.post/3kdwou4f7f32k
+DebugOut($tmp);
+//DebugOut($config);
 
 //$tmp = atp_api_get_data($config["nsid"]['getfollowers'],$data);
 

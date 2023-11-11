@@ -26,6 +26,7 @@ $NSID['bsky']= [
     'searchPerson' => 'app.bsky.actor.searchActors',
     'getBlocks' => 'app.bsky.graph.getBlocks',
     'getNotifications' => 'app.bsky.notification.listNotifications',
+    'deleteRecord' => 'com.atproto.repo.deleteRecord',
     
 
 ];

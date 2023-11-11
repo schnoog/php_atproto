@@ -10,7 +10,7 @@ $config['included'][] = "atp_post.php";
  * @throws RestClientException 
  */
 
- function atp_api_post_data($nsid, $data = null,$content_type = 'application/json',$encode_body=true)
+ function atp_api_post_data($nsid, $data = null,$content_type = 'application/json',$encode_body=true,$ignore_response = false)
  {
      global $config;
      if (!atp_session_get()) {
@@ -56,9 +56,14 @@ $config['included'][] = "atp_post.php";
      $tmpX  = json_decode(json_encode($result,JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_NUMERIC_CHECK  ), true);
      
      if($tmpX['response_status_lines'][0] == "HTTP/2 200") {
+        
+        if(!$ignore_response){
          $retval = json_decode(json_encode($result->decode_response()), true);
          DebugOut($retval, "retval", $debugthis);
          return $retval;
+        }
+        return [];
+
      } else {
          $config['error'] = $tmpX['response_status_lines'][0];
          DebugOut($tmpX, "ERROR", $debugthis);

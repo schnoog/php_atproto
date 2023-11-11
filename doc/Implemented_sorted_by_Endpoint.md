@@ -19,4 +19,5 @@
 | app.bsky.notification.listNotifications | atp_get_own_notifications     | Returns the own notifications (limited)                                                |
 | app.bsky.notification.listNotifications | atp_get_own_notifications_all | Returns ALL own notifications                                                          |
 | com.atproto.identity.resolveHandle      | atp_get_user_did_from_handle  | returns the did of a given handle (f.e. schnoog.eu)                                    |
+| com.atproto.repo.deleteRecord           | atp_delete_post               | deletes an own post                                                                    |
 | https://search.bsky.social/search/posts | atp_search_posts_by_term      | Search posts by searchterm - non API call                                              |

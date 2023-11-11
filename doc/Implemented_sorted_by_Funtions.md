@@ -7,6 +7,7 @@
 | app.bsky.feed.post                      | atp_create_post               | Creates a post on the own feed                                                         |
 | app.bsky.feed.post                      | atp_create_quote              | Creates a quote post                                                                   |
 | app.bsky.feed.post                      | atp_create_reply              | Creates a reply to a post                                                              |
+| com.atproto.repo.deleteRecord           | atp_delete_post               | deletes an own post                                                                    |
 | app.bsky.graph.getBlocks                | atp_get_own_blocks            | Returns ALL blocks of the current used account                                         |
 | app.bsky.graph.getBlocks                | atp_get_own_blocks_all        | Returns ALL blocks of the current used account                                         |
 | app.bsky.notification.listNotifications | atp_get_own_notifications     | Returns the own notifications (limited)                                                |

@@ -1,4 +1,4 @@
-Extracted Sat Nov 11 15:47:29     2023:
+Extracted Sat Nov 11 21:01:19     2023:
 app.bsky.actor.defs:A reference to an actor in the network.
 app.bsky.actor.getPreferences:Get private preferences attached to the account.
 app.bsky.actor.getSuggestions:Get a list of actors suggested for following. Used in discovery UIs.
