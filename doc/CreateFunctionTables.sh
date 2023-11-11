@@ -33,11 +33,7 @@ do
 echo "CL:   $CL"
     FN=$(echo "$CL" | cut -d ';' -f 2)
     FD=$(findLabel "$FN")
-    EPN=$(echo "$CL" | cut -d ";" -f 1)
-    EPL=$(grep "$EPN" "endpoints_and_descs.txt" | cut -d ':' -f 2- )
-    echo "EPL $EPL with EPN $EPN"
-    echo 'grep "'"$CL"'" "endpoints_and_descs.txt"'
-    OUT="$CL"";""$FD"";""$EPL"
+    OUT="$CL"";""$FD"
 echo "$OUT"
     echo "$OUT" >> "$INPUT"
 
