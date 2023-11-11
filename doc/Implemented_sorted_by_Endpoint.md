@@ -5,10 +5,10 @@
 | endpoint                                | function                      | description                                                                            | endpoint-description |
 | --------------------------------------- | ----------------------------- | -------------------------------------------------------------------------------------- | -------------------- |
 | app.bsky.actor.searchActors             | atp_search_user_by_term       | Returns ALL persons / actors for a search term                                         |
-| app.bsky.actor.searchActors             | atp_search_user_by_termAll    | Returns ALL persons / actors for a search term                                         |
+| app.bsky.actor.searchActors             | atp_search_user_by_term_all   |                                                                                        |
 | app.bsky.feed.getAuthorFeed             | atp_get_user_posts            | get posts from the feed of a user                                                      |
 | app.bsky.feed.getAuthorFeed             | atp_get_user_posts_all        | get ALL posts from the feed of a user                                                  |
-| app.bsky.feed.getTimeline               | atp_get_own_timeline          | returns the number of entries defined from the own timeline                            |
+| app.bsky.feed.getTimeline               | atp_get_own_timeline          | returns the all entries from the own timeline                                          |
 | app.bsky.feed.post                      | atp_create_post               | Creates a post on the own feed                                                         |
 | app.bsky.feed.post                      | atp_create_quote              | Creates a quote post                                                                   |
 | app.bsky.feed.post                      | atp_create_reply              | Creates a reply to a post                                                              |

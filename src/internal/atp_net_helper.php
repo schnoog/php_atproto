@@ -4,43 +4,6 @@ $config['included'][] = "atp_net_helper.php";
 
 
 
-function atp_get_own_timeline_all(){
-    global $config;
-    $actors = array();
-    $singlecall = 100;
-    $cursor = "X";  
-    while(strlen($cursor) > 0){
-        $work = atp_get_own_timeline($singlecall,$cursor);
-        $cursor = "";
-        if(isset($work['cursor']))$cursor = $work['cursor'];
-        $runfol = $work['feed'];
-        for($x = 0; $x < count($runfol);$x++){
-            $actors[] = $runfol[$x];
-        }
-    }
-    return ['feed' => $actors];
-}
-
-/**
- * atp_get_own_timeline - returns the number of entries defined from the own timeline
- * @param int $limit 
- * @return bool 
- * @throws RestClientException 
- */
-function atp_get_own_timeline($limit = 50,$cursor =''){
-    global $config;
-    $cursor ="x";
-    $getconfig = [
-        'limit' => $limit,       
-    ];
-    if(strlen($cursor)> 1){
-        $getconfig['cursor'] = $cursor;
-    } 
-    $retval = atp_api_get_data($config['nsid']['get_timeline'],$getconfig);
-    return $retval;
-}
-
-
 /**
  * atp_create_file_blob - created a blob from a file
  * @param mixed $filename 
