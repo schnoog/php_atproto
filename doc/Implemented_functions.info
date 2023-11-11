@@ -1,17 +1,17 @@
-endpoint;function;description
-app.bsky.feed.post;atp_create_post;Posting on own timeline
-app.bsky.graph.getFollowers;atp_get_user_followers;Get followers of an account (limited limited to max 100 follower)
-app.bsky.graph.getFollowers;atp_get_user_followers_all;Wrapper for atp_get_user_followers to get ALL followers
-app.bsky.feed.getTimeline;atp_get_own_timeline;Get the own feed (timeline) (with limits)
-com.atproto.identity.resolveHandle;atp_get_user_did_from_handle;Get the did handle of a user (by name)
-https://search.bsky.social/search/posts;atp_search_posts_by_term;Search service - non API
-app.bsky.feed.getAuthorFeed;atp_get_user_posts;Get an users feed (timeline)  (limited to max 100 posts)
-app.bsky.feed.getAuthorFeed;atp_get_user_posts_all;Wrapper for atp_get_user_posts to get ALL posts
-app.bsky.actor.searchActors;atp_search_user_by_term;Returns the persons / actors for a search term (limit)
-app.bsky.actor.searchActors;atp_search_user_by_termAll;Returns ALL persons / actors for a search term
-app.bsky.graph.getBlocks;atp_get_own_blocks_all;Returns ALL blocks of the current used account
-app.bsky.graph.getBlocks;atp_get_own_blocks;Returns blocks of the current used account (limited)
-app.bsky.feed.post;atp_create_reply;Creates a reply to a post
-app.bsky.feed.post;atp_create_quote;Creates a quote post
-app.bsky.notification.listNotifications;atp_get_own_notifications;Returns the own notifications (limited)
-app.bsky.notification.listNotifications;atp_get_own_notifications_all;Returns ALL own notifications (limited)
+endpoint;function;description;endpoint-description
+app.bsky.feed.post;atp_create_post;Posting on own timeline;
+app.bsky.graph.getFollowers;atp_get_user_followers;Get followers of an account (limited limited to max 100 follower);
+app.bsky.graph.getFollowers;atp_get_user_followers_all;Wrapper for atp_get_user_followers to get ALL followers;
+app.bsky.feed.getTimeline;atp_get_own_timeline;Get the own feed (timeline) (with limits);
+com.atproto.identity.resolveHandle;atp_get_user_did_from_handle;Get the did handle of a user (by name);
+https://search.bsky.social/search/posts;atp_search_posts_by_term;Search service - non API;
+app.bsky.feed.getAuthorFeed;atp_get_user_posts;Get an users feed (timeline)  (limited to max 100 posts);
+app.bsky.feed.getAuthorFeed;atp_get_user_posts_all;Wrapper for atp_get_user_posts to get ALL posts;
+app.bsky.actor.searchActors;atp_search_user_by_term;Returns the persons / actors for a search term (limit);
+app.bsky.actor.searchActors;atp_search_user_by_termAll;Returns ALL persons / actors for a search term;
+app.bsky.graph.getBlocks;atp_get_own_blocks_all;Returns ALL blocks of the current used account;
+app.bsky.graph.getBlocks;atp_get_own_blocks;Returns blocks of the current used account (limited);
+app.bsky.feed.post;atp_create_reply;Creates a reply to a post;
+app.bsky.feed.post;atp_create_quote;Creates a quote post;
+app.bsky.notification.listNotifications;atp_get_own_notifications;Returns the own notifications (limited);
+app.bsky.notification.listNotifications;atp_get_own_notifications_all;Returns ALL own notifications (limited);

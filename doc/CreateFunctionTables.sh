@@ -14,8 +14,8 @@ pwd
 function findLabel {
     LABEL="$1"
     FF=$(dirname $(pwd))"/src/"
-
-    grep -B 30 -r "function $LABEL" "$FF" | grep "\* $LABEL" | cut -d '*' -f 2 | cut -d '-' -f 2- | head -n 1
+    PART1=$(grep -B 30 -r "function $LABEL" "$FF" | grep "\* $LABEL" | cut -d '*' -f 2 | cut -d '-' -f 2- | head -n 1)
+    echo "$PART1"
 }
 
 
@@ -30,10 +30,14 @@ head -n 1 "$RAWINPUT" > $INPUT
 ALL=$(tail -n+2 "$RAWINPUT" |  cut -d ";" -f -2)
 for CL in $ALL
 do
-echo "$CL"
+echo "CL:   $CL"
     FN=$(echo "$CL" | cut -d ';' -f 2)
     FD=$(findLabel "$FN")
-    OUT="$CL"";""$FD"
+    EPN=$(echo "$CL" | cut -d ";" -f 1)
+    EPL=$(grep "$EPN" "endpoints_and_descs.txt" | cut -d ':' -f 2- )
+    echo "EPL $EPL with EPN $EPN"
+    echo 'grep "'"$CL"'" "endpoints_and_descs.txt"'
+    OUT="$CL"";""$FD"";""$EPL"
 echo "$OUT"
     echo "$OUT" >> "$INPUT"
 
